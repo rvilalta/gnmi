@@ -41,6 +41,9 @@ RUN mkdir -p \
       github.com/google/gnxi/gnmi_set \
       github.com/google/gnxi/gnmi_target
 
+COPY target_configs/modeldata.go /home/faucet/go/src/github.com/google/gnxi/gnmi/modeldata/
+COPY target_configs/generated.go /home/faucet/go/src/github.com/google/gnxi/gnmi/modeldata/gostruct/
+
 RUN go install -v \
       github.com/google/gnxi/gnmi_capabilities \
       github.com/google/gnxi/gnmi_get \
@@ -53,6 +56,8 @@ RUN cd $HOME/certs/ \
 
 ENV GNMI_TARGET=localhost
 ENV GNMI_PORT=10161
+
+
 
 CMD ./_startup.sh \
     && /bin/bash

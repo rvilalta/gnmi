@@ -5,4 +5,5 @@ gnmi_target \
   -cert $HOME/certs/server.crt \
   -ca $HOME/certs/ca.crt \
   -alsologtostderr \
-  -config target_configs/typical_ofsw_config.json
+  -config target_configs/terminal.json \
+  --notls
