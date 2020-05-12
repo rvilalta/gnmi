@@ -1,0 +1,2 @@
+docker-compose up -d --scale gnmi=4
+time ./request.sh 64 32768 &> out.txt
